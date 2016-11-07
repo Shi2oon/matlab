@@ -1,14 +1,4 @@
-% 
-% written by:
-% Ernest Chan
-%
-% Author of Quantitative Trading: 
-% How to Start Your Own Algorithmic Trading Business?
-%
-% ernest@epchan.com
-% www.epchan.com
-
-clear; % make sure previously defined variables are erased.
+clear;
 
 [num, txt]=xlsread('GLD'); % read a spreadsheet named "GLD.xls" into MATLAB. 
 
@@ -37,11 +27,10 @@ cl1=adjcls1(idx1);
 cl2=adjcls2(idx2);  
 
 trainset=1:252; % define indices for training set
-
 testset=trainset(end)+1:length(tday); % define indices for test set
 
 % determines the hedge ratio on the trainset
-results=ols(cl1(trainset), cl2(trainset)); % use regression function 
+results=ols(cl1(trainset), cl2(trainset),0.05); % use regression function 
 hedgeRatio=results.beta;
 
 spread=cl1-hedgeRatio*cl2; % spread = GLD - hedgeRatio*GDX
@@ -74,19 +63,20 @@ positions(longs,  :)=repmat([1 -1], [length(find(longs)) 1]); % short entries
 
 positions(exits,  :)=zeros(length(find(exits)), 2); % exit positions
 
-positions=fillMissingData(positions); % ensure existing positions are carried forward unless there is an exit signal
+%positions=fillMissingData(positions); % ensure existing positions are carried forward unless there is an exit signal
 
 cl=[cl1 cl2]; % combine the 2 price series
 
 dailyret=(cl - lag1(cl))./lag1(cl);
 
 pnl=sum(lag1(positions).*dailyret, 2);
+ 
+sharpeTrainset=sqrt(252)*nanmean(pnl(trainset(2:end)))./nanstd(pnl(trainset(2:end))) % the Sharpe ratio on the training set should be about 2.3
+ 
+sharpeTestset=sqrt(252)*nanmean(pnl(testset))./nanstd(pnl(testset)) % the Sharpe ratio on the test set should be about 1.5
 
-sharpeTrainset=sqrt(252)*mean(pnl(trainset(2:end)))./std(pnl(trainset(2:end))) % the Sharpe ratio on the training set should be about 2.3
-
-sharpeTestset=sqrt(252)*mean(pnl(testset))./std(pnl(testset)) % the Sharpe ratio on the test set should be about 1.5
-
-plot(cumsum(pnl(testset)));
+plot(nancumsum(pnl(testset)));
+ 
 
 save example3_6_positions positions; % save positions file for checking look-ahead bias.
 

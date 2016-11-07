@@ -87,7 +87,7 @@ positions(longs,  :)=repmat([1 -1], [length(find(longs)) 1]); % short entries
 
 positions(exits,  :)=zeros(length(find(exits)), 2); % exit positions
 
-positions=fillMissingData(positions); % ensure existing positions are carried forward unless there is an exit signal
+%positions=fillMissingData(positions); % ensure existing positions are carried forward unless there is an exit signal
 
 cl=[cl1 cl2]; % combine the 2 price series
 
@@ -95,11 +95,11 @@ dailyret=(cl - lag1(cl))./lag1(cl);
 
 pnl=sum(lag1(positions).*dailyret, 2);
 
-sharpeTrainset=sqrt(252)*mean(pnl(trainset(2:end)))./std(pnl(trainset(2:end))) % the Sharpe ratio on the training set should be about 2.9
+sharpeTrainset=sqrt(252)*nanmean(pnl(trainset(2:end)))./nanstd(pnl(trainset(2:end))) % the Sharpe ratio on the training set should be about 2.9
 
-sharpeTestset=sqrt(252)*mean(pnl(testset))./std(pnl(testset)) % the Sharpe ratio on the test set should be about 1.0
+sharpeTestset=sqrt(252)*nanmean(pnl(testset))./nanstd(pnl(testset)) % the Sharpe ratio on the test set should be about 1.0
 
-plot(cumsum(pnl(testset)));
+plot(nancumsum(pnl(testset)));
 
 % step two of look-forward-bias check
 oldoutput=load('example3_6_positions');
