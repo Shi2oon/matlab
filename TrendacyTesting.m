@@ -1,27 +1,23 @@
-% select ifnull(a.clnav,'NaN'),ifnull(c.clnav,'NaN'),ifnull(g.clnav,'NaN'),ifnull(h.clnav,'NaN'),ifnull(i.clnav,'NaN'),ifnull(j.clnav,'NaN') from ( 
+% select ifnull(a.clnav,'NaN'),ifnull(b.clnav,'NaN'),ifnull(c.clnav,'NaN'),ifnull(d.clnav,'NaN')from ( 
 % select date, clnav from data.nav_etf 
-% where symbol='159919'  and date > '2013-07-30' ) a 
+% where symbol='159915'  and date > '2013-07-30' ) a 
 % left join (select date, clnav from data.nav_etf 
-% where symbol='159905'  and date > '2013-07-30') c on a.date=c.date
+% where symbol='159905'  and date > '2013-07-30') b on a.date=b.date
 % left join (select date, clnav from data.nav_etf 
-% where symbol='510500'  and date > '2013-07-30') g on a.date=g.date
+% where symbol='510500'  and date > '2013-07-30') c on a.date=c.date
 % left join (select date, clnav from data.nav_etf 
-% where symbol='511010'  and date > '2013-07-30') h on a.date=h.date
-% left join (select date, clnav from data.nav_etf 
-% where symbol='513500'  and date > '2013-07-30') i on a.date=i.date
-% left join (select date, clnav from data.nav_etf 
-% where symbol='159915'  and date > '2013-07-30') j on a.date=j.date
+% where symbol='513500'  and date > '2013-07-30') d on a.date=d.date
 % order by a.date asc
 
 % 159905	深红利
 % 159915	创业板
-% 159919	300ETF
+% ----159919	300ETF
 % 510500	500ETF
-% 511010	国债ETF
+% ----511010	国债ETF
 % 513500	标普500
 
 clear;clc;
-data = csvread('trend2.csv'); % read data
+data = csvread('trend.csv'); % read data
 data = CopyPre(data);         % clean 'Nan', copy them from pre-day
 mday = 20;                    % set mday as 20 days
 

@@ -4,7 +4,7 @@ curs1 = exec(conn,'select symbol from data.nav_etf group by symbol');
 curs1 = fetch(curs1);
 data2 = curs1.Data;
 
-curs = exec(conn,'select clnav from data.nav_etf where symbol ="513500" order by date asc');
+curs = exec(conn,'select clnav from data.nav_etf where symbol ="159919" and date > "2015-12-30"order by date asc');
 curs = fetch(curs);
 data0 = curs.Data;
 %num = rows(curs);
