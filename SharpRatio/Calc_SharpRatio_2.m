@@ -5,9 +5,9 @@ curs1 = fetch(curs1);
 data2 = curs1.Data;
 
 
-fid=fopen('sharpratio_2016.txt','a+');
+fid=fopen('sharpratio_20130731.txt','a+');
 for i = 1:length(data2)
-    sql = strcat('select clnav from data.nav_etf where symbol =" ',data2(i),'" and date>"2015-12-31" order by date asc');
+    sql = strcat('select clnav from data.nav_etf where symbol =" ',data2(i),'" and date>"2013-07-30" order by date asc');
     sql2 =sql{1};
     curs = exec(conn,sql2);
     curs = fetch(curs);

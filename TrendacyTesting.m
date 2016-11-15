@@ -1,4 +1,4 @@
-% select ifnull(a.clnav,'NaN'),ifnull(c.clnav,'NaN'),ifnull(g.clnav,'NaN'),ifnull(h.clnav,'NaN'),ifnull(j.clnav,'NaN') from ( 
+% select ifnull(a.clnav,'NaN'),ifnull(c.clnav,'NaN'),ifnull(g.clnav,'NaN'),ifnull(h.clnav,'NaN'),ifnull(i.clnav,'NaN'),ifnull(j.clnav,'NaN') from ( 
 % select date, clnav from data.nav_etf 
 % where symbol='159919'  and date > '2013-07-30' ) a 
 % left join (select date, clnav from data.nav_etf 
@@ -8,6 +8,8 @@
 % left join (select date, clnav from data.nav_etf 
 % where symbol='511010'  and date > '2013-07-30') h on a.date=h.date
 % left join (select date, clnav from data.nav_etf 
+% where symbol='513500'  and date > '2013-07-30') i on a.date=i.date
+% left join (select date, clnav from data.nav_etf 
 % where symbol='159915'  and date > '2013-07-30') j on a.date=j.date
 % order by a.date asc
 
@@ -16,9 +18,10 @@
 % 159919	300ETF
 % 510500	500ETF
 % 511010	¹úÕ®ETF
+% 513500	±êÆÕ500
 
 clear;clc;
-data = csvread('trend7.csv'); % read data
+data = csvread('trend2.csv'); % read data
 data = CopyPre(data);         % clean 'Nan', copy them from pre-day
 mday = 20;                    % set mday as 20 days
 
