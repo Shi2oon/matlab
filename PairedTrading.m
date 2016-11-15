@@ -4,7 +4,7 @@ clear;
 
 tday1=txt(2:end, 1); % the first column (starting from the second row) is the trading days in format mm/dd/yyyy.
 
-tday1=datestr(datenum(tday1, 'mm/dd/yyyy'), 'yyyymmdd'); % convert the format into yyyymmdd.
+tday1=datestr(datenum(tday1, 'yyyy/mm/dd'), 'yyyymmdd'); % convert the format into yyyymmdd.
 
 tday1=str2double(cellstr(tday1)); % convert the date strings first into cell arrays and then into numeric format.
 
@@ -14,7 +14,7 @@ adjcls1=num(:, end); % the last column contains the adjusted close prices.
 
 tday2=txt(2:end, 1); % the first column (starting from the second row) is the trading days in format mm/dd/yyyy.
 
-tday2=datestr(datenum(tday2, 'mm/dd/yyyy'), 'yyyymmdd'); % convert the format into yyyymmdd.
+tday2=datestr(datenum(tday2, 'yyyy/mm/dd'), 'yyyymmdd'); % convert the format into yyyymmdd.
 
 tday2=str2double(cellstr(tday2)); % convert the date strings first into cell arrays and then into numeric format.
 
@@ -30,8 +30,9 @@ trainset=1:252; % define indices for training set
 testset=trainset(end)+1:length(tday); % define indices for test set
 
 % determines the hedge ratio on the trainset
-results=ols(cl1(trainset), cl2(trainset),0.05); % use regression function 
+results=ols(cl1(trainset), cl2(trainset),0.01); % use regression function 
 hedgeRatio=results.beta;
+hedgeRatio
 
 spread=cl1-hedgeRatio*cl2; % spread = GLD - hedgeRatio*GDX
 
@@ -63,18 +64,20 @@ positions(longs,  :)=repmat([1 -1], [length(find(longs)) 1]); % short entries
 
 positions(exits,  :)=zeros(length(find(exits)), 2); % exit positions
 
-%positions=fillMissingData(positions); % ensure existing positions are carried forward unless there is an exit signal
+positions=fillMissingData(positions); % ensure existing positions are carried forward unless there is an exit signal
 
 cl=[cl1 cl2]; % combine the 2 price series
 
 dailyret=(cl - lag1(cl))./lag1(cl);
 
 pnl=sum(lag1(positions).*dailyret, 2);
- 
+pnl(testset)
 sharpeTrainset=sqrt(252)*nanmean(pnl(trainset(2:end)))./nanstd(pnl(trainset(2:end))) % the Sharpe ratio on the training set should be about 2.3
  
 sharpeTestset=sqrt(252)*nanmean(pnl(testset))./nanstd(pnl(testset)) % the Sharpe ratio on the test set should be about 1.5
 
+plot(nancumsum(pnl(trainset(2:end))));
+figure;
 plot(nancumsum(pnl(testset)));
  
 
