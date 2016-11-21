@@ -1,103 +1,103 @@
-symbol= 159901, sharpRatio= -0.086283, cumret= -0.017151, maxDrawdown= -0.189871, maxDrawdownDuration= 207 
-symbol= 159902, sharpRatio= -0.299788, cumret= -0.072522, maxDrawdown= -0.218900, maxDrawdownDuration= 207 
-symbol= 159903, sharpRatio= -0.198021, cumret= -0.053881, maxDrawdown= -0.219571, maxDrawdownDuration= 207 
-symbol= 159905, sharpRatio= 0.264816, cumret= 0.053851, maxDrawdown= -0.155765, maxDrawdownDuration= 148 
-symbol= 159906, sharpRatio= -0.226475, cumret= -0.058317, maxDrawdown= -0.189343, maxDrawdownDuration= 207 
-symbol= 159907, sharpRatio= -0.170668, cumret= -0.054615, maxDrawdown= -0.240761, maxDrawdownDuration= 207 
-symbol= 159908, sharpRatio= 0.163280, cumret= 0.034914, maxDrawdown= -0.174420, maxDrawdownDuration= 205 
-symbol= 159909, sharpRatio= -0.378684, cumret= -0.105203, maxDrawdown= -0.237850, maxDrawdownDuration= 208 
-symbol= 159910, sharpRatio= 0.265847, cumret= 0.054616, maxDrawdown= -0.163739, maxDrawdownDuration= 204 
-symbol= 159911, sharpRatio= -0.275998, cumret= -0.074160, maxDrawdown= -0.220262, maxDrawdownDuration= 207 
-symbol= 159912, sharpRatio= -0.224196, cumret= -0.055408, maxDrawdown= -0.211842, maxDrawdownDuration= 207 
-symbol= 159913, sharpRatio= 0.121055, cumret= 0.026189, maxDrawdown= -0.184688, maxDrawdownDuration= 205 
-symbol= 159915, sharpRatio= -0.338985, cumret= -0.116331, maxDrawdown= -0.240926, maxDrawdownDuration= 208 
-symbol= 159916, sharpRatio= 0.322111, cumret= 0.064203, maxDrawdown= -0.150790, maxDrawdownDuration= 192 
-symbol= 159917, sharpRatio= 5.527479, cumret= 0.243590, maxDrawdown= -0.589744, maxDrawdownDuration= 2 
-symbol= 159918, sharpRatio= -0.187756, cumret= -0.071517, maxDrawdown= -0.264876, maxDrawdownDuration= 208 
-symbol= 159919, sharpRatio= 0.030424, cumret= 0.009999, maxDrawdown= -0.193420, maxDrawdownDuration= 207 
-symbol= 159920, sharpRatio= 0.676707, cumret= 0.125394, maxDrawdown= -0.128362, maxDrawdownDuration= 65 
-symbol= 159921, sharpRatio= -0.373139, cumret= -0.088120, maxDrawdown= -0.217028, maxDrawdownDuration= 207 
-symbol= 159922, sharpRatio= -0.080924, cumret= -0.032853, maxDrawdown= -0.244871, maxDrawdownDuration= 207 
-symbol= 159923, sharpRatio= 0.111752, cumret= 0.027451, maxDrawdown= -0.171144, maxDrawdownDuration= 205 
-symbol= 159924, sharpRatio= -0.117341, cumret= -0.027027, maxDrawdown= -0.214003, maxDrawdownDuration= 207 
-symbol= 159925, sharpRatio= 0.061726, cumret= 0.015739, maxDrawdown= -0.194203, maxDrawdownDuration= 207 
-symbol= 159927, sharpRatio= -0.100412, cumret= -0.013692, maxDrawdown= -0.193856, maxDrawdownDuration= 207 
-symbol= 159928, sharpRatio= 0.499195, cumret= 0.104730, maxDrawdown= -0.178360, maxDrawdownDuration= 99 
-symbol= 159929, sharpRatio= -0.038424, cumret= -0.012638, maxDrawdown= -0.207321, maxDrawdownDuration= 207 
-symbol= 159930, sharpRatio= 0.171426, cumret= 0.031820, maxDrawdown= -0.189581, maxDrawdownDuration= 207 
-symbol= 159931, sharpRatio= 0.021267, cumret= 0.010475, maxDrawdown= -0.177867, maxDrawdownDuration= 207 
-symbol= 159932, sharpRatio= -0.136805, cumret= -0.049209, maxDrawdown= -0.242283, maxDrawdownDuration= 207 
-symbol= 159933, sharpRatio= 0.244607, cumret= 0.050006, maxDrawdown= -0.168035, maxDrawdownDuration= 148 
-symbol= 159935, sharpRatio= -0.161101, cumret= -0.052395, maxDrawdown= -0.247135, maxDrawdownDuration= 207 
-symbol= 159936, sharpRatio= -0.201611, cumret= -0.055184, maxDrawdown= -0.247521, maxDrawdownDuration= 207 
-symbol= 159937, sharpRatio= 1.396686, cumret= 0.214286, maxDrawdown= -0.075240, maxDrawdownDuration= 85 
-symbol= 159938, sharpRatio= -0.012705, cumret= -0.009556, maxDrawdown= -0.210666, maxDrawdownDuration= 207 
-symbol= 159939, sharpRatio= -0.259433, cumret= -0.091054, maxDrawdown= -0.253466, maxDrawdownDuration= 208 
-symbol= 159940, sharpRatio= 0.108680, cumret= 0.025984, maxDrawdown= -0.181639, maxDrawdownDuration= 205 
-symbol= 159942, sharpRatio= -0.424543, cumret= -0.109445, maxDrawdown= -0.226866, maxDrawdownDuration= 207 
-symbol= 159943, sharpRatio= -0.201701, cumret= -0.052897, maxDrawdown= -0.215980, maxDrawdownDuration= 207 
-symbol= 159944, sharpRatio= 0.293710, cumret= 0.061941, maxDrawdown= -0.252726, maxDrawdownDuration= 203 
-symbol= 159945, sharpRatio= 0.517719, cumret= 0.121981, maxDrawdown= -0.197693, maxDrawdownDuration= 191 
-symbol= 159946, sharpRatio= 0.465405, cumret= 0.099563, maxDrawdown= -0.197378, maxDrawdownDuration= 118 
-symbol= 510010, sharpRatio= 0.052564, cumret= 0.014884, maxDrawdown= -0.197452, maxDrawdownDuration= 207 
-symbol= 510020, sharpRatio= 0.340757, cumret= 0.068422, maxDrawdown= -0.182421, maxDrawdownDuration= 190 
-symbol= 510030, sharpRatio= 0.188602, cumret= 0.040335, maxDrawdown= -0.156320, maxDrawdownDuration= 148 
-symbol= 510050, sharpRatio= 0.181529, cumret= 0.039222, maxDrawdown= -0.153124, maxDrawdownDuration= 148 
-symbol= 510060, sharpRatio= -0.071151, cumret= -0.008798, maxDrawdown= -0.199924, maxDrawdownDuration= 207 
-symbol= 510070, sharpRatio= -0.071776, cumret= -0.011096, maxDrawdown= -0.211421, maxDrawdownDuration= 207 
-symbol= 510090, sharpRatio= 0.164114, cumret= 0.035934, maxDrawdown= -0.175246, maxDrawdownDuration= 148 
-symbol= 510110, sharpRatio= 0.074335, cumret= 0.021155, maxDrawdown= -0.170518, maxDrawdownDuration= 148 
-symbol= 510120, sharpRatio= -0.193321, cumret= -0.037736, maxDrawdown= -0.218013, maxDrawdownDuration= 207 
-symbol= 510130, sharpRatio= -0.137243, cumret= -0.030076, maxDrawdown= -0.231170, maxDrawdownDuration= 207 
-symbol= 510150, sharpRatio= 0.025547, cumret= 0.007037, maxDrawdown= -0.206313, maxDrawdownDuration= 207 
-symbol= 510160, sharpRatio= 0.221031, cumret= 0.045758, maxDrawdown= -0.216537, maxDrawdownDuration= 205 
-symbol= 510170, sharpRatio= 0.342481, cumret= 0.074766, maxDrawdown= -0.234875, maxDrawdownDuration= 205 
-symbol= 510180, sharpRatio= 0.014368, cumret= 0.010993, maxDrawdown= -0.182631, maxDrawdownDuration= 207 
-symbol= 510190, sharpRatio= -0.101186, cumret= -0.018025, maxDrawdown= -0.210245, maxDrawdownDuration= 207 
-symbol= 510210, sharpRatio= -0.076523, cumret= -0.009724, maxDrawdown= -0.203175, maxDrawdownDuration= 207 
-symbol= 510220, sharpRatio= -0.220416, cumret= -0.055556, maxDrawdown= -0.245875, maxDrawdownDuration= 207 
-symbol= 510230, sharpRatio= 0.200559, cumret= 0.042384, maxDrawdown= -0.168173, maxDrawdownDuration= 148 
-symbol= 510260, sharpRatio= -0.181898, cumret= -0.051325, maxDrawdown= -0.241491, maxDrawdownDuration= 207 
-symbol= 510270, sharpRatio= 0.048337, cumret= 0.014493, maxDrawdown= -0.190000, maxDrawdownDuration= 207 
-symbol= 510280, sharpRatio= 0.196096, cumret= 0.041512, maxDrawdown= -0.178441, maxDrawdownDuration= 148 
-symbol= 510290, sharpRatio= -0.160935, cumret= -0.051252, maxDrawdown= -0.253693, maxDrawdownDuration= 207 
-symbol= 510300, sharpRatio= -0.000746, cumret= 0.006081, maxDrawdown= -0.186427, maxDrawdownDuration= 207 
-symbol= 510310, sharpRatio= 0.030245, cumret= 0.010381, maxDrawdown= -0.191687, maxDrawdownDuration= 207 
-symbol= 510330, sharpRatio= 0.055745, cumret= 0.015757, maxDrawdown= -0.188153, maxDrawdownDuration= 207 
-symbol= 510360, sharpRatio= 0.105239, cumret= 0.024262, maxDrawdown= -0.188291, maxDrawdownDuration= 205 
-symbol= 510410, sharpRatio= 0.512556, cumret= 0.120521, maxDrawdown= -0.221482, maxDrawdownDuration= 123 
-symbol= 510420, sharpRatio= -0.096067, cumret= -0.022772, maxDrawdown= -0.230769, maxDrawdownDuration= 207 
-symbol= 510430, sharpRatio= 0.070381, cumret= 0.016212, maxDrawdown= -0.195683, maxDrawdownDuration= 207 
-symbol= 510440, sharpRatio= -0.141050, cumret= -0.047925, maxDrawdown= -0.255102, maxDrawdownDuration= 207 
-symbol= 510450, sharpRatio= -1.057474, cumret= -0.170613, maxDrawdown= -0.247472, maxDrawdownDuration= 111 
-symbol= 510500, sharpRatio= -0.092249, cumret= -0.037899, maxDrawdown= -0.250649, maxDrawdownDuration= 207 
-symbol= 510510, sharpRatio= -0.124677, cumret= -0.044054, maxDrawdown= -0.248897, maxDrawdownDuration= 207 
-symbol= 510520, sharpRatio= -0.139941, cumret= -0.045739, maxDrawdown= -0.242318, maxDrawdownDuration= 207 
-symbol= 510560, sharpRatio= -0.125793, cumret= -0.044578, maxDrawdown= -0.249293, maxDrawdownDuration= 207 
-symbol= 510580, sharpRatio= -0.255619, cumret= -0.061261, maxDrawdown= -0.212612, maxDrawdownDuration= 207 
-symbol= 510610, sharpRatio= -0.468628, cumret= -0.058946, maxDrawdown= -0.190383, maxDrawdownDuration= 53 
-symbol= 510620, sharpRatio= -0.598631, cumret= -0.081899, maxDrawdown= -0.256169, maxDrawdownDuration= 53 
-symbol= 510630, sharpRatio= 0.507108, cumret= 0.106057, maxDrawdown= -0.190941, maxDrawdownDuration= 118 
-symbol= 510650, sharpRatio= 0.125234, cumret= 0.030006, maxDrawdown= -0.163894, maxDrawdownDuration= 148 
-symbol= 510660, sharpRatio= -0.049371, cumret= -0.011970, maxDrawdown= -0.218979, maxDrawdownDuration= 207 
-symbol= 510680, sharpRatio= 0.589526, cumret= 0.081344, maxDrawdown= -0.062017, maxDrawdownDuration= 76 
-symbol= 510700, sharpRatio= 5.527479, cumret= 0.243590, maxDrawdown= -0.589744, maxDrawdownDuration= 2 
-symbol= 510710, sharpRatio= 0.206464, cumret= 0.043372, maxDrawdown= -0.172151, maxDrawdownDuration= 148 
-symbol= 510880, sharpRatio= 0.178929, cumret= 0.038720, maxDrawdown= -0.173695, maxDrawdownDuration= 204 
-symbol= 510900, sharpRatio= 0.386925, cumret= 0.078296, maxDrawdown= -0.156696, maxDrawdownDuration= 122 
-symbol= 511010, sharpRatio= 0.206089, cumret= 0.027853, maxDrawdown= -0.014159, maxDrawdownDuration= 57 
-symbol= 511210, sharpRatio= 0.585281, cumret= 0.029535, maxDrawdown= -0.005969, maxDrawdownDuration= 41 
-symbol= 512010, sharpRatio= 0.358811, cumret= 0.071603, maxDrawdown= -0.153392, maxDrawdownDuration= 124 
-symbol= 512110, sharpRatio= -0.927979, cumret= -0.156522, maxDrawdown= -0.239634, maxDrawdownDuration= 173 
-symbol= 512120, sharpRatio= 0.023390, cumret= 0.003663, maxDrawdown= -0.196662, maxDrawdownDuration= 181 
-symbol= 512230, sharpRatio= -0.074129, cumret= -0.019120, maxDrawdown= -0.204767, maxDrawdownDuration= 207 
-symbol= 512300, sharpRatio= -0.057599, cumret= -0.030702, maxDrawdown= -0.248261, maxDrawdownDuration= 207 
-symbol= 512500, sharpRatio= -0.123096, cumret= -0.042043, maxDrawdown= -0.244263, maxDrawdownDuration= 207 
-symbol= 512510, sharpRatio= -0.094373, cumret= -0.037363, maxDrawdown= -0.250107, maxDrawdownDuration= 207 
-symbol= 512600, sharpRatio= 0.512825, cumret= 0.106805, maxDrawdown= -0.175891, maxDrawdownDuration= 99 
-symbol= 512610, sharpRatio= -0.061169, cumret= -0.015861, maxDrawdown= -0.203307, maxDrawdownDuration= 207 
-symbol= 512640, sharpRatio= 0.078586, cumret= 0.020847, maxDrawdown= -0.176749, maxDrawdownDuration= 148 
-symbol= 513500, sharpRatio= 0.973765, cumret= 0.130724, maxDrawdown= -0.068229, maxDrawdownDuration= 43 
-symbol= 513600, sharpRatio= 0.608515, cumret= 0.107816, maxDrawdown= -0.128469, maxDrawdownDuration= 67 
-symbol= 513660, sharpRatio= 0.649994, cumret= 0.111004, maxDrawdown= -0.128452, maxDrawdownDuration= 64 
-symbol= 518880, sharpRatio= 1.354367, cumret= 0.209069, maxDrawdown= -0.075808, maxDrawdownDuration= 85 
+159901,-0.086283,-0.017151,-0.189871,207 
+159902,-0.299788,-0.072522,-0.218900,207 
+159903,-0.198021,-0.053881,-0.219571,207 
+159905,0.264816,0.053851,-0.155765,148 
+159906,-0.226475,-0.058317,-0.189343,207 
+159907,-0.170668,-0.054615,-0.240761,207 
+159908,0.163280,0.034914,-0.174420,205 
+159909,-0.378684,-0.105203,-0.237850,208 
+159910,0.265847,0.054616,-0.163739,204 
+159911,-0.275998,-0.074160,-0.220262,207 
+159912,-0.224196,-0.055408,-0.211842,207 
+159913,0.121055,0.026189,-0.184688,205 
+159915,-0.338985,-0.116331,-0.240926,208 
+159916,0.322111,0.064203,-0.150790,192 
+159917,5.527479,0.243590,-0.589744,2 
+159918,-0.187756,-0.071517,-0.264876,208 
+159919,0.030424,0.009999,-0.193420,207 
+159920,0.676707,0.125394,-0.128362,65 
+159921,-0.373139,-0.088120,-0.217028,207 
+159922,-0.080924,-0.032853,-0.244871,207 
+159923,0.111752,0.027451,-0.171144,205 
+159924,-0.117341,-0.027027,-0.214003,207 
+159925,0.061726,0.015739,-0.194203,207 
+159927,-0.100412,-0.013692,-0.193856,207 
+159928,0.499195,0.104730,-0.178360,99 
+159929,-0.038424,-0.012638,-0.207321,207 
+159930,0.171426,0.031820,-0.189581,207 
+159931,0.021267,0.010475,-0.177867,207 
+159932,-0.136805,-0.049209,-0.242283,207 
+159933,0.244607,0.050006,-0.168035,148 
+159935,-0.161101,-0.052395,-0.247135,207 
+159936,-0.201611,-0.055184,-0.247521,207 
+159937,1.396686,0.214286,-0.075240,85 
+159938,-0.012705,-0.009556,-0.210666,207 
+159939,-0.259433,-0.091054,-0.253466,208 
+159940,0.108680,0.025984,-0.181639,205 
+159942,-0.424543,-0.109445,-0.226866,207 
+159943,-0.201701,-0.052897,-0.215980,207 
+159944,0.293710,0.061941,-0.252726,203 
+159945,0.517719,0.121981,-0.197693,191 
+159946,0.465405,0.099563,-0.197378,118 
+510010,0.052564,0.014884,-0.197452,207 
+510020,0.340757,0.068422,-0.182421,190 
+510030,0.188602,0.040335,-0.156320,148 
+510050,0.181529,0.039222,-0.153124,148 
+510060,-0.071151,-0.008798,-0.199924,207 
+510070,-0.071776,-0.011096,-0.211421,207 
+510090,0.164114,0.035934,-0.175246,148 
+510110,0.074335,0.021155,-0.170518,148 
+510120,-0.193321,-0.037736,-0.218013,207 
+510130,-0.137243,-0.030076,-0.231170,207 
+510150,0.025547,0.007037,-0.206313,207 
+510160,0.221031,0.045758,-0.216537,205 
+510170,0.342481,0.074766,-0.234875,205 
+510180,0.014368,0.010993,-0.182631,207 
+510190,-0.101186,-0.018025,-0.210245,207 
+510210,-0.076523,-0.009724,-0.203175,207 
+510220,-0.220416,-0.055556,-0.245875,207 
+510230,0.200559,0.042384,-0.168173,148 
+510260,-0.181898,-0.051325,-0.241491,207 
+510270,0.048337,0.014493,-0.190000,207 
+510280,0.196096,0.041512,-0.178441,148 
+510290,-0.160935,-0.051252,-0.253693,207 
+510300,-0.000746,0.006081,-0.186427,207 
+510310,0.030245,0.010381,-0.191687,207 
+510330,0.055745,0.015757,-0.188153,207 
+510360,0.105239,0.024262,-0.188291,205 
+510410,0.512556,0.120521,-0.221482,123 
+510420,-0.096067,-0.022772,-0.230769,207 
+510430,0.070381,0.016212,-0.195683,207 
+510440,-0.141050,-0.047925,-0.255102,207 
+510450,-1.057474,-0.170613,-0.247472,111 
+510500,-0.092249,-0.037899,-0.250649,207 
+510510,-0.124677,-0.044054,-0.248897,207 
+510520,-0.139941,-0.045739,-0.242318,207 
+510560,-0.125793,-0.044578,-0.249293,207 
+510580,-0.255619,-0.061261,-0.212612,207 
+510610,-0.468628,-0.058946,-0.190383,53 
+510620,-0.598631,-0.081899,-0.256169,53 
+510630,0.507108,0.106057,-0.190941,118 
+510650,0.125234,0.030006,-0.163894,148 
+510660,-0.049371,-0.011970,-0.218979,207 
+510680,0.589526,0.081344,-0.062017,76 
+510700,5.527479,0.243590,-0.589744,2 
+510710,0.206464,0.043372,-0.172151,148 
+510880,0.178929,0.038720,-0.173695,204 
+510900,0.386925,0.078296,-0.156696,122 
+511010,0.206089,0.027853,-0.014159,57 
+511210,0.585281,0.029535,-0.005969,41 
+512010,0.358811,0.071603,-0.153392,124 
+512110,-0.927979,-0.156522,-0.239634,173 
+512120,0.023390,0.003663,-0.196662,181 
+512230,-0.074129,-0.019120,-0.204767,207 
+512300,-0.057599,-0.030702,-0.248261,207 
+512500,-0.123096,-0.042043,-0.244263,207 
+512510,-0.094373,-0.037363,-0.250107,207 
+512600,0.512825,0.106805,-0.175891,99 
+512610,-0.061169,-0.015861,-0.203307,207 
+512640,0.078586,0.020847,-0.176749,148 
+513500,0.973765,0.130724,-0.068229,43 
+513600,0.608515,0.107816,-0.128469,67 
+513660,0.649994,0.111004,-0.128452,64 
+518880,1.354367,0.209069,-0.075808,85 

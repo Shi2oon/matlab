@@ -1,29 +1,28 @@
-% select ifnull(a.clnav,'NaN'),ifnull(b.clnav,'NaN'),ifnull(c.clnav,'NaN'),ifnull(d.clnav,'NaN')from ( 
+% select ifnull(a.clnav,'NaN'),ifnull(b.clnav,'NaN'),ifnull(c.clnav,'NaN'),ifnull(r.clnav,'NaN') from (
 % select date, clnav from data.nav_etf 
-% where symbol='159915'  and date > '2013-07-30' ) a 
+% where symbol='159915'  and date > '2013-12-04' ) a 
 % left join (select date, clnav from data.nav_etf 
-% where symbol='159905'  and date > '2013-07-30') b on a.date=b.date
+% where symbol='513100'  and date > '2013-12-04') b on a.date=b.date
 % left join (select date, clnav from data.nav_etf 
-% where symbol='510500'  and date > '2013-07-30') c on a.date=c.date
+% where symbol='513500'  and date > '2013-12-04') c on a.date=c.date
 % left join (select date, clnav from data.nav_etf 
-% where symbol='513500'  and date > '2013-07-30') d on a.date=d.date
-% order by a.date asc
+% where symbol='510500'  and date > '2013-12-04') r on a.date=r.date
+% order by a.date asc 
 
-% 159905	深红利
 % 159915	创业板
-% ----159919	300ETF
+% 513100	纳斯达克100
 % 510500	500ETF
-% ----511010	国债ETF
 % 513500	标普500
 
 clear;clc;
-data = csvread('trend.csv'); % read data
+data = csvread('trend2.csv'); % read data
 data = CopyPre(data);         % clean 'Nan', copy them from pre-day
-mday = 20;                    % set mday as 20 days
+mday = 19;                    % set mday as 19 days
+data
 
-ret = data(mday+1:end,:)./data(1:end-mday,:) -1; % calculate 20 days margin return
+ret = data(mday+1:end,:)./data(1:end-mday,:) -1; % calculate 19 days margin return
 dailyret = data(mday+3:end,:)./data(mday+2:end-1,:) -1; % calculate 1 days return
-[max,index]=max(ret,[],2);    % get column number of max margin return in 20 days
+[max,index]=max(ret,[],2);    % get column number of max margin return in 19 days
 for i = 1:length(index)-2
     pfret(i)=dailyret(i,index(i));
 end

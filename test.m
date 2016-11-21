@@ -14,7 +14,12 @@ clear;clc;
 % A=[0 17 50;-12 40 3;5 -10 2;30 4 3]
 % [Y_row,Ind_col]=max(A') 
 % [max_a,index]=max(A,[],2)
-
-p=[0:0.01:1];
-h=-1*(p.*log2(p)+(1-p).*log2(1-p));
-plot(p,h); grid on;
+% 
+% p=[0:0.01:1];
+% h=-1*(p.*log2(p)+(1-p).*log2(1-p));
+% plot(p,h); grid on;
+universe = [159905,159915,510500,513500,513100];
+for g=1:length(universe)
+    ret{g}=strcat(num2str(universe(g)),'%');
+end
+ret
