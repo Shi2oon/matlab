@@ -3,23 +3,13 @@ conn = database('data','root','66196619','com.mysql.jdbc.Driver','jdbc:mysql://l
 % curs1 = exec(conn,'select symbol from data.nav_etf group by symbol');
 % curs1 = fetch(curs1);
 % data2 = curs1.Data;
-data2 = {'159901'
-'159905'
-'159915'
-'510050'
-'510130'
-'510160'
-'510180'
-'510310'
-'510330'
-'510500'
-'510880'
-'513100'
-'513500'};
+data2 = {'510050'
+'510060'
+'510070'};
 
-fid=fopen('sharpratio_201307315.txt','a+');
+fid=fopen('sharpratio_20150715_chosen2.txt','a+');
 for i = 1:length(data2)
-    sql = strcat('select clnav from data.nav_etf where symbol =" ',data2(i),'" and date>"2013-12-04"order by date asc');
+    sql = strcat('select clnav from data.nav_etf where symbol =" ',data2(i),'" and date>"2015-07-14"order by date asc');
     sql2 =sql{1};
     curs = exec(conn,sql2);
     curs = fetch(curs);

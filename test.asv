@@ -28,4 +28,19 @@ clear;clc;
 % load data2.mat
 
 
+% a = rand(10,5) %目标矩阵
+% randidx = randperm(size(a,2))
+% numOfSel = 4; %需要随机选出的列数 
+% b = a(:,randidx(1:numOfSel))
+
+for i=1:2^3-1
+    a(i)=i;
+end
+a=a';
+a=dec2bin(a);
+a=num2str(a)
+
+b= [1 2 3; 4 5 6]
+[b(:,1) b(:,3)]
+
  

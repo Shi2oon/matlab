@@ -1,0 +1,3 @@
+symbol= 510050, sharpRatio= -0.382446, cumret= -0.114008, maxDrawdown= -0.286026, maxDrawdownDuration= 328 
+symbol= 510060, sharpRatio= -0.556571, cumret= -0.202420, maxDrawdown= -0.379902, maxDrawdownDuration= 324 
+symbol= 510070, sharpRatio= -0.319478, cumret= -0.132201, maxDrawdown= -0.349411, maxDrawdownDuration= 324 

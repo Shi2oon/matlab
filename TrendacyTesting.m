@@ -15,16 +15,27 @@
 % 513500	±êÆÕ500
 
 clear;clc;
-data = csvread('trend2.csv'); % read data
+data = csvread('trend.csv'); % read data
 data = CopyPre(data);         % clean 'Nan', copy them from pre-day
 mday = 19;                    % set mday as 19 days
-data
+
 
 ret = data(mday+1:end,:)./data(1:end-mday,:) -1; % calculate 19 days margin return
 dailyret = data(mday+3:end,:)./data(mday+2:end-1,:) -1; % calculate 1 days return
-[max,index]=max(ret,[],2);    % get column number of max margin return in 19 days
+[max,index]=max(ret,[],2);   % get column number of max margin return in 19 days
+
+for j = 1:length(max)
+    if max(j)< 0
+        index(j) = 0;
+    end
+end
+
 for i = 1:length(index)-2
-    pfret(i)=dailyret(i,index(i));
+    if index(i) == 0
+        pfret(i) = 0;
+    else
+        pfret(i) = dailyret(i,index(i));
+    end
 end
 % use column number to fill porfoli return from daily return 
 
