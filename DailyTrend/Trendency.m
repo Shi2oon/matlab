@@ -1,6 +1,6 @@
 % Initialization
 clear;clc;
-universe = [510880,510500,513500,513100,159901,510160,510230,510290];
+universe = [510880,510500,513500,513100,159901,510160,510900];
 mday =19;
 
 % Get close price for each ETF in mday's ago

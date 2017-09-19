@@ -71,10 +71,10 @@ cl=[cl1 cl2]; % combine the 2 price series
 dailyret=(cl - lag1(cl))./lag1(cl);
 
 pnl=sum(lag1(positions).*dailyret, 2);
-pnl(testset)
-sharpeTrainset=sqrt(252)*nanmean(pnl(trainset(2:end)))./nanstd(pnl(trainset(2:end))) % the Sharpe ratio on the training set should be about 2.3
+
+sharpeTrainset=sqrt(252)*nanmean(pnl(trainset(2:end)))./nanstd(pnl(trainset(2:end))); % the Sharpe ratio on the training set should be about 2.3
  
-sharpeTestset=sqrt(252)*nanmean(pnl(testset))./nanstd(pnl(testset)) % the Sharpe ratio on the test set should be about 1.5
+sharpeTestset=sqrt(252)*nanmean(pnl(testset))./nanstd(pnl(testset)); % the Sharpe ratio on the test set should be about 1.5
 
 plot(nancumsum(pnl(trainset(2:end))));
 figure;
