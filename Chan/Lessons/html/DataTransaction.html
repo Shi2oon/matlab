@@ -1,0 +1,268 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>DataTransaction</title><meta name="generator" content="MATLAB 9.0"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-08-10"><meta name="DC.source" content="DataTransaction.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><pre class="codeinput">clear; <span class="comment">%&#28165;&#29702;&#20869;&#23384;</span>
+clc;<span class="comment">%&#28165;&#29702;&#23631;&#24149;</span>
+close <span class="string">all</span>;
+<span class="comment">%format comnact;%&#23450;&#20041;&#25968;&#25454;&#26174;&#31034;&#26679;&#24335;&#20026;&#32039;&#20945;&#26684;&#24335;</span>
+<span class="comment">%tic &#24320;&#22987;&#35745;&#26102;&#65292; toc &#32467;&#26463;&#35760;&#26102;</span>
+
+A = [10:0.01:12];<span class="comment">%&#29983;&#25104;&#38543;&#26426;&#25968;</span>
+prices = randsrc(100,1,A);<span class="comment">%</span>
+dates = [today-99:today]';
+TimeSeries = fints(dates,prices,<span class="string">'close'</span>)
+
+<span class="comment">%%&#35835;&#21462;fints&#25968;&#25454;&#31867;&#22411;</span>
+TimeSeries.dates
+<span class="comment">%&#25552;&#21462;&#25968;&#25454;&#65292;0&#34920;&#31034;&#21482;&#25552;&#21462;&#25968;&#25454;&#65292;1&#34920;&#31034;&#25552;&#21462;&#25968;&#25454;&#21644;&#26085;&#26399;</span>
+TimeSeries1 = fts2mat(TimeSeries,0,<span class="string">'close'</span>)
+TimeSeries(<span class="string">'06/06/17'</span>)<span class="comment">%&#25353;&#22825;&#25552;&#21462;</span>
+TimeSeries.close(<span class="string">'06/06/17::06/15/17'</span>)<span class="comment">%&#25353;&#26102;&#38388;&#27573;&#25552;&#21462;</span>
+TimeSeries.close([1 3 95:end])<span class="comment">%&#25353;&#26631;&#21495;&#25552;&#21462;</span>
+
+<span class="comment">%%&#37329;&#34701;&#26102;&#38388;&#24207;&#21015;&#21608;&#26399;&#30340;&#36716;&#21270;</span>
+TimeSeries2 = convertto(TimeSeries,<span class="string">'w'</span>)
+<span class="comment">%TimeSeries2 = convertto(TimeSeries,'m')</span>
+<span class="comment">%&#36716;&#21270;&#20026;&#21608;&#25968;&#25454;&#65292; d - &#22825;&#65292;w/m/q/s - &#21322;&#24180;/a - &#24180;</span>
+
+<span class="comment">%%&#25910;&#30410;&#29575;&#21644;&#20215;&#26684;&#24207;&#21015;&#30340;&#36716;&#21270;</span>
+returns  = price2ret(TimeSeries1) <span class="comment">%&#23545;&#25968;&#25910;&#30410;&#29575;</span>
+NormPrices = ret2price(returns)<span class="comment">%&#30001;&#25910;&#30410;&#29575;&#24471;&#21040;&#30340;&#26631;&#20934;&#21270;&#20215;&#26684;&#65292;&#36215;&#28857;&#20215;&#26684;&#20026;1</span>
+
+<span class="comment">%%&#24322;&#24120;&#25968;&#25454;&#22788;&#29702;</span>
+<span class="comment">%&#23547;&#25214;&#31354;&#25110;&#32773;&#36127;&#25968;&#30340;&#25968;&#25454;&#20301;&#32622;&#65292;&#24182;&#36171;&#20540;&#20026;0</span>
+TimeSeries3= [NaN -10 NaN 12 -10]';
+location1 = isnan(TimeSeries3)
+TimeSeries3(location1) = 0 <span class="comment">%NaN&#20301;&#32622;&#36171;&#20540;&#20026;0</span>
+location2 = find(TimeSeries3 &lt;0)
+TimeSeries3(location2)= 0
+
+<span class="comment">%%&#22810;&#36164;&#20135;&#20132;&#26131;&#26085;&#26399;&#30340;&#23545;&#24212;</span>
+load <span class="string">WKEA</span>
+load <span class="string">HLSW</span>
+A = WKEA.DATE(2996:end);
+B = HLSW.DATE;
+C = union(A,B);
+n1 = length(C);
+data1 = cell(n1,3);<span class="comment">%&#24320;&#36767;&#23384;&#20648;&#31354;&#38388;</span>
+data1(:1) = C;
+[c,ia,ib] = intersect(A,C);
+data1(ib,2) = num2cell(WKEA.CLOSE(2996:end));
+[c,ia,ib] = intersect(B,C);
+data1(ib,3) = num2cell(HLSW.CLOSE);
+xlswrite(<span class="string">'data1.xlsx'</span>,data1)
+
+location = cellfun(@(x)isempty(x),data1(:3));
+data2 = data1(:,3);
+data2(location) =[NaN];
+HLSW1 = fints(C,cell2mat(data2));
+
+TimeSeries4 = fillts(HLSW1,<span class="string">'linear'</span>);
+<span class="comment">%&#32447;&#24615;&#25554;&#20540;&#27861;&#65292;&#20854;&#20182;&#36824;&#26377; cubic - &#19977;&#27425;&#25554;&#20540;&#65292;spline - &#26679;&#26465;&#25554;&#20540;</span>
+<span class="comment">%nearst - &#26368;&#36817;&#27861;, pchip - &#36880;&#27573;&#20809;&#28369;&#30340;&#19977;&#27425;Hemite&#22810;&#39033;&#24335;&#27861;</span>
+figure
+subplot(2,1,1)
+
+<span class="comment">%%&#23450;&#20041;Table&#25968;&#25454;&#31867;&#22411;</span>
+Name = {<span class="string">'stock1'</span>;<span class="string">'stock2'</span>;<span class="string">'stock3'</span>;<span class="string">'stock4'</span>;<span class="string">'stock5'</span>};
+open = [38;43;38;40;49];
+yclose = [71;69;64;67;64];
+tprice = [176;163;131;133;119];
+T = table(open,yclose,tprice,<span class="string">'RowNames'</span>,Name)
+<span class="comment">%%&#35835;&#21462;Table&#25968;&#25454;</span>
+T.open <span class="comment">%&#35835;&#21462;&#21015;&#25968;&#25454;</span>
+T{3,:} <span class="comment">%&#35835;&#21462;&#31532;3&#34892;&#25968;&#25454;</span>
+T.Properties.RowNames <span class="comment">%&#35835;&#21462;&#32929;&#31080;&#21517;&#31216;&#65292;&#34920;&#22836;&#21015;s</span>
+T.Properties.VariableNames <span class="comment">%&#35835;&#21462;&#21464;&#37327;&#21517;&#31216;&#65292;&#34920;&#22836;&#34892;</span>
+
+<span class="comment">%%&#23450;&#20041;DataSet&#25968;&#25454;&#31867;&#22411;</span>
+<span class="comment">%DataSet&#25968;&#25454;&#32467;&#26500;&#20026;Statistics&#24037;&#20855;&#31665;&#23450;&#20041;&#30340;&#31867;&#22411;&#65292;&#20027;&#35201;&#20989;&#25968;&#26377;&#65306;</span>
+<span class="comment">%cat(&#36830;&#25509;);cellstr;datasetfun;disp;sisplay;double;end;</span>
+<span class="comment">%get;grpstats;horzcat;isempty;join;length;ndims;numel</span>
+<span class="comment">%set;single;size;sortrows;stack;subsref;summary;unique;vertcat</span>
+date1 = {<span class="string">'2014/1/1'</span>,<span class="string">'2014/1/3'</span>,<span class="string">'2014/1/5'</span>}';
+date2 = {<span class="string">'2014/1/2'</span>,<span class="string">'2014/1/3'</span>,<span class="string">'2014/1/5'</span>}';
+price1 = [2 3 5]';
+price2 = [3 4 2]';
+y = cell(1,2);<span class="comment">%&#24320;&#36767;&#23384;&#20648;&#31354;&#38388;</span>
+y{1,1} = dataset(date1,price1,<span class="string">'VarNames'</span>,{<span class="string">'date'</span>,<span class="string">'close'</span>});
+y{1,2} = dataset(date2,price2,<span class="string">'VarNames'</span>,{<span class="string">'date'</span>,<span class="string">'close'</span>});
+
+<span class="comment">%%DataSet&#25968;&#25454;&#31867;&#22411;&#30340;&#35835;&#21462;</span>
+a = y{1,1}; <span class="comment">%&#26412;&#36136;&#20026;&#32467;&#26500;&#21464;&#37327;</span>
+a1 = a(:,1) <span class="comment">%&#31532;1&#21015;&#65292;&#26085;&#26399;</span>
+a2 = a(:,2)
+a3 = a.date <span class="comment">%&#20803;&#32990;&#25968;&#32452;&#65292;</span>
+a4 = a.close
+
+<span class="comment">%%Join&#20989;&#25968;&#21512;&#24182;&#25968;&#25454;</span>
+a = y
+</pre><pre class="codeoutput error">&#38169;&#35823;&#20351;&#29992; dbstatus
+&#38169;&#35823;: &#25991;&#20214;:C:\Matlab\Mathwork\Lessons\DataTransaction.m &#34892;:45 &#21015;:8
+&#19981;&#24212;&#20026; MATLAB &#34920;&#36798;&#24335;&#12290;
+</pre><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2016a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+clear; %清理内存
+clc;%清理屏幕
+close all; 
+%format comnact;%定义数据显示样式为紧凑格式
+%tic 开始计时， toc 结束记时
+
+A = [10:0.01:12];%生成随机数
+prices = randsrc(100,1,A);%
+dates = [today-99:today]';
+TimeSeries = fints(dates,prices,'close')
+
+%%读取fints数据类型
+TimeSeries.dates
+%提取数据，0表示只提取数据，1表示提取数据和日期
+TimeSeries1 = fts2mat(TimeSeries,0,'close')
+TimeSeries('06/06/17')%按天提取
+TimeSeries.close('06/06/17::06/15/17')%按时间段提取
+TimeSeries.close([1 3 95:end])%按标号提取
+
+%%金融时间序列周期的转化
+TimeSeries2 = convertto(TimeSeries,'w')
+%TimeSeries2 = convertto(TimeSeries,'m')
+%转化为周数据， d - 天，w/m/q/s - 半年/a - 年
+
+%%收益率和价格序列的转化
+returns  = price2ret(TimeSeries1) %对数收益率
+NormPrices = ret2price(returns)%由收益率得到的标准化价格，起点价格为1
+
+%%异常数据处理
+%寻找空或者负数的数据位置，并赋值为0
+TimeSeries3= [NaN -10 NaN 12 -10]';
+location1 = isnan(TimeSeries3)
+TimeSeries3(location1) = 0 %NaN位置赋值为0
+location2 = find(TimeSeries3 <0)
+TimeSeries3(location2)= 0
+
+%%多资产交易日期的对应
+load WKEA
+load HLSW
+A = WKEA.DATE(2996:end);
+B = HLSW.DATE;
+C = union(A,B);
+n1 = length(C);
+data1 = cell(n1,3);%开辟存储空间
+data1(:1) = C;
+[c,ia,ib] = intersect(A,C);
+data1(ib,2) = num2cell(WKEA.CLOSE(2996:end));
+[c,ia,ib] = intersect(B,C);
+data1(ib,3) = num2cell(HLSW.CLOSE);
+xlswrite('data1.xlsx',data1)
+
+location = cellfun(@(x)isempty(x),data1(:3));
+data2 = data1(:,3);
+data2(location) =[NaN];
+HLSW1 = fints(C,cell2mat(data2));
+
+TimeSeries4 = fillts(HLSW1,'linear');
+%线性插值法，其他还有 cubic - 三次插值，spline - 样条插值
+%nearst - 最近法, pchip - 逐段光滑的三次Hemite多项式法
+figure
+subplot(2,1,1)
+
+%%定义Table数据类型
+Name = {'stock1';'stock2';'stock3';'stock4';'stock5'};
+open = [38;43;38;40;49];
+yclose = [71;69;64;67;64];
+tprice = [176;163;131;133;119];
+T = table(open,yclose,tprice,'RowNames',Name)
+%%读取Table数据
+T.open %读取列数据
+T{3,:} %读取第3行数据
+T.Properties.RowNames %读取股票名称，表头列s
+T.Properties.VariableNames %读取变量名称，表头行
+
+%%定义DataSet数据类型
+%DataSet数据结构为Statistics工具箱定义的类型，主要函数有：
+%cat(连接);cellstr;datasetfun;disp;sisplay;double;end;
+%get;grpstats;horzcat;isempty;join;length;ndims;numel
+%set;single;size;sortrows;stack;subsref;summary;unique;vertcat
+date1 = {'2014/1/1','2014/1/3','2014/1/5'}';
+date2 = {'2014/1/2','2014/1/3','2014/1/5'}';
+price1 = [2 3 5]';
+price2 = [3 4 2]';
+y = cell(1,2);%开辟存储空间
+y{1,1} = dataset(date1,price1,'VarNames',{'date','close'});
+y{1,2} = dataset(date2,price2,'VarNames',{'date','close'});
+
+%%DataSet数据类型的读取
+a = y{1,1}; %本质为结构变量
+a1 = a(:,1) %第1列，日期
+a2 = a(:,2) 
+a3 = a.date %元胞数组，
+a4 = a.close
+
+%%Join函数合并数据
+a = y
+
+##### SOURCE END #####
+--></body></html>

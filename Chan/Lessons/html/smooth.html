@@ -1,0 +1,180 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>smooth</title><meta name="generator" content="MATLAB 9.0"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-08-10"><meta name="DC.source" content="smooth.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><pre class="codeinput"><span class="comment">%&#25968;&#25454;&#30340;&#24179;&#28369;&#22788;&#29702;</span>
+<span class="comment">% y = smooth(y)</span>
+<span class="comment">% y = smooth(y,span)</span>
+<span class="comment">% y = smooth(y,method)</span>
+<span class="comment">% y = smooth(y,span,method)</span>
+<span class="comment">% y = smooth(y,'sgolay',degree)</span>
+<span class="comment">% y = smooth(y,span,'sgolay',degree)</span>
+<span class="comment">% y = smooth(x,y,...)</span>
+
+clear;
+t = linspace(0,2*pi,500)';
+y =  100*sin(t);
+noise = normrnd(0,15,500,1);<span class="comment">%&#22122;&#22768;&#20135;&#29983;&#65292;&#22343;&#20540;0&#65292;&#26631;&#20934;&#24046;15&#65292;500&#20010;&#25968;&#20540;</span>
+y = y + noise;
+figure;
+plot(t,y);
+xlabel(<span class="string">'t'</span>)
+ylabel(<span class="string">'y = sin(t) + &#22122;&#22768;'</span>);
+<span class="comment">%</span>
+<span class="comment">% yy1=smooth(y,30);</span>
+<span class="comment">% figure;</span>
+<span class="comment">% plot(t,y,'k:');</span>
+<span class="comment">% hold on;</span>
+<span class="comment">% plot(t,yy1,'k','linewidth',3);</span>
+<span class="comment">% xlable('t');</span>
+<span class="comment">% ylable('moving');</span>
+<span class="comment">% legend('&#21152;&#22122;&#27874;&#24418;','&#24179;&#28369;&#21518;&#27874;&#24418;')</span>
+
+<span class="comment">% yy2=smooth(y,30,'lowess');</span>
+<span class="comment">% figure;</span>
+<span class="comment">% plot(t,y,'k:');</span>
+<span class="comment">% hold on;</span>
+<span class="comment">% plot(t,yy2,'k','linewidth',3);</span>
+<span class="comment">% xlable('t');</span>
+<span class="comment">% ylable('lowess');</span>
+<span class="comment">% legend('&#21152;&#22122;&#27874;&#24418;','&#24179;&#28369;&#21518;&#27874;&#24418;')</span>
+
+<span class="comment">% yy3=smooth(y,30,'rlowess');</span>
+<span class="comment">% figure;</span>
+<span class="comment">% plot(t,y,'k:');</span>
+<span class="comment">% hold on;</span>
+<span class="comment">% plot(t,yy3,'k','linewidth',3);</span>
+<span class="comment">% xlable('t');</span>
+<span class="comment">% ylable('rlowess');</span>
+<span class="comment">% legend('&#21152;&#22122;&#27874;&#24418;','&#24179;&#28369;&#21518;&#27874;&#24418;')</span>
+
+<span class="comment">% yy4=smooth(y,30,'loess');</span>
+<span class="comment">% figure;</span>
+<span class="comment">% plot(t,y,'k:');</span>
+<span class="comment">% hold on;</span>
+<span class="comment">% plot(t,yy4,'k','linewidth',3);</span>
+<span class="comment">% xlable('t');</span>
+<span class="comment">% ylable('loess');</span>
+<span class="comment">% legend('&#21152;&#22122;&#27874;&#24418;','&#24179;&#28369;&#21518;&#27874;&#24418;')</span>
+</pre><img vspace="5" hspace="5" src="smooth_01.png" style="width:560px;height:420px;" alt=""> <p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2016a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%数据的平滑处理
+% y = smooth(y)
+% y = smooth(y,span)
+% y = smooth(y,method)
+% y = smooth(y,span,method)
+% y = smooth(y,'sgolay',degree)
+% y = smooth(y,span,'sgolay',degree)
+% y = smooth(x,y,...)
+
+clear;
+t = linspace(0,2*pi,500)';
+y =  100*sin(t);
+noise = normrnd(0,15,500,1);%噪声产生，均值0，标准差15，500个数值
+y = y + noise;
+figure;
+plot(t,y);
+xlabel('t')
+ylabel('y = sin(t) + 噪声');
+% 
+% yy1=smooth(y,30);
+% figure;
+% plot(t,y,'k:');
+% hold on;
+% plot(t,yy1,'k','linewidth',3);
+% xlable('t');
+% ylable('moving');
+% legend('加噪波形','平滑后波形')
+
+% yy2=smooth(y,30,'lowess');
+% figure;
+% plot(t,y,'k:');
+% hold on;
+% plot(t,yy2,'k','linewidth',3);
+% xlable('t');
+% ylable('lowess');
+% legend('加噪波形','平滑后波形')
+
+% yy3=smooth(y,30,'rlowess');
+% figure;
+% plot(t,y,'k:');
+% hold on;
+% plot(t,yy3,'k','linewidth',3);
+% xlable('t');
+% ylable('rlowess');
+% legend('加噪波形','平滑后波形')
+
+% yy4=smooth(y,30,'loess');
+% figure;
+% plot(t,y,'k:');
+% hold on;
+% plot(t,yy4,'k','linewidth',3);
+% xlable('t');
+% ylable('loess');
+% legend('加噪波形','平滑后波形')
+##### SOURCE END #####
+--></body></html>
